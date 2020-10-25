@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+<meta name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 7.0.0.0 for Windows">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>利用説明書</title>
+<style type="text/css">
+<!--
+body{
+  font-size : 80%;
+}
+A{
+  text-decoration : none;
+}
+H2{
+  letter-spacing : 1px;
+  color : #ff6600;
+  text-align : center;
+}
+#main_div{
+  text-align : left;
+  width : 400px;
+  height : 100%;
+  line-height : 1.4;
+}
+TABLE{
+  width : 100%;
+border-width : 1px 1px 1px 1px;border-style : solid solid solid solid;border-top-color : silver;border-right-color : silver;border-bottom-color : silver;border-left-color : silver;}
+H4{
+  border-left-width : 3px;
+  border-left-style : solid;
+  border-left-color : #ff6600;
+  padding-left : 5px;
+  color : #ff6600;
+  border-bottom-width : 1px;
+  border-bottom-style : dotted;
+  border-bottom-color : #ff6600;
+}
+#quote{
+  padding-left : 5px;
+  margin-top : 5px;
+  margin-left : 10px;
+  margin-right : 10px;
+  margin-bottom : 5px;
+  border-left-width : 1px;
+  border-left-style : solid;
+  border-left-color : #ffbe7d;
+}
+TD{border-width : 1px 1px 1px 1px;border-style : solid solid solid solid;border-color : silver silver silver silver;}
+TH{border-width : 1px 1px 1px 1px;border-style : solid solid solid solid;border-color : silver silver silver silver;}
+IMG{
+  padding-left : 10px;
+  padding-right : 10px;
+}
+.code{
+  background: #FFFFFF;
+  border: 1px inset #000080;
+  padding: 0px 6px 6px 6px;
+  width: 380px;
+  height: 300px;
+  margin: 0.5em;
+  overflow: auto;
+}
+-->
+</style>
+</head>
+<body>
+<div align="center">
+<div id="main_div">
+<h2>XOOPS検索</h2>
+<H4>このモジュールについて</H4>
+<img src="images/search_logo.png" width="92" height="52" border="0" align="left">日本語に優しくないXOOPSの検索機能を日本語(マルチバイト)向けに改良しモジュール化したものです。検索ブロックも付属しています。EUC-JP専用。<br clear="left">
+<h4>機能説明(<font size="-1">付属の検索機能とこのモジュールとの違い</font>)</h4>
+<ul>
+  <LI>最低文字数の表示を半角と全角で示すように変更。
+  <LI>用語の一般化「検索対象のモジュール」→「検索対象のページ」
+  <LI>用語の一般化「検索ルール」→「検索上の注意」
+  <LI>テンプレートで出力するので検索結果のレイアウトができる。
+  <LI>テンプレートで出力するので<a href="http://ryus.biz/modules/mydownloads/singlefile.php?cid=3&amp;lid=13" target="_blank">ryus_date</a>などのプラグインを自由に使える。
+  <LI>全角スペースでもAND検索できるように変更。
+  <LI>全角英数でも半角英数にヒットするように変更(要mbstring)。
+  <LI>全角カナでも半角カナにヒットするように変更(要mbstring)。
+  <LI>半角英数でも全角英数にヒットするように変更(要mbstring)。
+  <LI>半角カナでも全角カナにヒットするように変更(要mbstring)。
+  <LI>検索できるモジュールが無い場合、検索できるモジュールがないことを示すように変更。
+  <LI>extract()による展開を止めて変数汚染を予防。
+  <LI>コアの一部から切り離したことで改造することに抵抗がなくなった。</LI>
+  <LI>「検索対象のモジュール」を管理者が自由に設定できる。</LI>
+  <LI>検索結果の本文を表示できる。(プラグインで拡張可能)</LI>
+  <LI>「サイト検索[転送用]」ブロック…http://あなたのサイト/search.phpにリクエストが有った際、このモジュールに自動的に転送するためのブロック。XOOPS付属のsearch.phpを全く使用したく無い場合は、全てのページ、全てのグループで表示されるように設定してください。</LI>
+</ul>
+*mbstringが無くても作動しますが日本語に最適化された機能の一部が使用できなくなります。機能の一部が使えなくなるわけで動作不能になるわけではありません。
+<h4>本文表示が使えるモジュール名一覧(アルファベット順)</h4>
+下記のモジュールはプラグイン又はモジュールが対応しています。<br>
+<br>
+<a href="http://www.bluish.jp/">BluesBB</a><br>
+<a href="http://www.suin.jp/">comment_search</a><br>
+<a href="http://www.peak.ne.jp/">myAlbum-P</a>* / mydownloads / mylinks<br>
+xhnewbb / news <br>
+<a href="http://www.peak.ne.jp/">piCal</a>*<br>
+<a href="http://www.peak.ne.jp/">TinyD</a>*<br>
+XoopsFAQ / <a href="http://www.kanpyo.net/">Xwords</a><br>
+<br>
+*印のあるものはモジュール自体が対応しているためプラグイン不要。そのためプラグインは同封していません。<br>
+<h4>ライセンスと著作権</h4>
+このアプリケーションはGPLに準拠するとともに日本国の著作権法の適用対象となります。ご利用の際はGPLおよび著作権法に十分注意してください。また良くある質問への返答は下記のとおりです。<br>
+Q.再配布は出来るか？<br>
+A.可能。ただしGPLの定める範囲内であること。そしてその配布物の責任は再配布主が負うことを前提とする。<br>
+Q.著作表示は削除してもよいか？<br>
+A.氏名表示権の示すとおり無断で削除してはならない。ただし、妥当な理由がある場合は許可を出すことがある。いずれにしても制作者(<a href="mailto:sim@suin.jp">sim@suin.jp</a>)への相談なしでは削除・改変等は一切認めない。<br>
+Q.販売は出来るか？<br>
+A.可能。ただしGPLの定める範囲内であること。そしてその商品の責任は販売主が負うことを前提とする。
+<h4>免責と保証</h4>
+<ul>
+  <li>このアプリケーションがあなたに与える影響に関して制作者には一切の責任はないとする。
+  <li>このアプリケーションの利用者に対して制作者は一切の責任を放棄する。
+  <li>制作者はこのアプリケーションの利用者に予告無くこのアプリケーションを変更・配布する時期・開発の中止等を自由に決定する権利を持つと共に、それらが利用者に与えることに関して制作者は一切の責任を負わない。
+  <li>制作者はこのアプリケーションの不具合を解決することに努力するが、それは制作者の義務ではない。
+  <li>利用者はこのアプリケーションを利用した時点でこのアプリケーションの全責任を負うと共に上記の事項に同意したとする。
+</ul>
+<h4>インストール方法</h4>
+1) 圧縮ファイルを解凍してモジュールディレクトリにアップロード。<br>
+<br>
+2) モジュール管理にてインストールしてください。<br>
+<br>
+3) このモジュールの「一般設定」で各種設定を行って下さい。<br>
+<br>
+4) グループとブロックの設定を行って下さい。<br>
+<h4>アンインストール方法</h4>
+通常のモジュール同様にモジュール管理よりアンインストールを実行してください。
+<h4>Tips - よりセキュアに -</h4>
+このモジュールではコアのセキュリティーホールを埋める機能も果たせます。<br>
+グローバルサーチを受け持つsearch.phpにはextract()を２回実行する脆弱が存在します。ここではコアをハックして、それを塞ぐ方法を紹介します。<br>
+<br>
+1.変更前、変更後を参考に、下記のように赤い部分を追加して下さい。<br>
+<br>
+search.php 変更前：
+<div class="code"><pre>$xoopsOption['pagetype'] = &quot;search&quot;;
+
+include 'mainfile.php';
+$config_handler =&amp; xoops_gethandler('config');
+$xoopsConfigSearch =&amp; $config_handler-&gt;getConfigsByCat(XOOPS_CONF_SEARCH);
+
+if ($xoopsConfigSearch['enable_search'] != 1) {
+    header('Location: '.XOOPS_URL.'/index.php');
+    exit();
+}
+
+extract($_GET);
+extract($_POST, EXTR_OVERWRITE);</pre></div>変更後：
+<div class="code"><pre>$xoopsOption['pagetype'] = &quot;search&quot;;
+
+include 'mainfile.php';
+<span style="color:red">
+// xoops search japanese optimization START
+if(file_exists(XOOPS_ROOT_PATH.&quot;/modules/search/index.php&quot;)){
+        $module_handler =&amp; xoops_gethandler('module');
+        $module =&amp; $module_handler-&gt;getByDirname('search');
+        if( $module-&gt;getVar('isactive') == 1){
+                header(&quot;Location: &quot;.XOOPS_URL.&quot;/modules/&quot;.$mydirname.&quot;/index.php?&quot;.$_SERVER['QUERY_STRING']);
+                exit();
+        }
+}
+// xoops search japanese optimization END</span>
+
+$config_handler =&amp; xoops_gethandler('config');
+$xoopsConfigSearch =&amp; $config_handler-&gt;getConfigsByCat(XOOPS_CONF_SEARCH);
+
+if ($xoopsConfigSearch['enable_search'] != 1) {
+    header('Location: '.XOOPS_URL.'/index.php');
+    exit();
+}
+
+extract($_GET);
+extract($_POST, EXTR_OVERWRITE);</pre></div>
+<h4>更新履歴</h4>
+<table border="1" cellpadding="0" cellspacing="0">
+  <col span="3">
+  <tbody>
+    <tr>
+      <th align="center">ver</th>
+      <th align="center">Date</th>
+      <th align="center">News</th>
+    </tr>
+    <tr>
+      <td nowrap>1.0</td>
+      <td nowrap>2005-01-19</td>
+      <td nowrap>ファーストリリース</td>
+    </tr>
+    <tr>
+      <td>1.1</td>
+      <td>2005-01-20</td>
+      <td>全角文字と半角文字を区別しないように変更</td>
+    </tr>
+    <tr>
+      <td>1.2</td>
+      <td>2005-01-24</td>
+      <td>検索するモジュールを制限できるような管理機能を追加。権限のないモジュールの検索結果が見えてしまう欠陥を修復。mbstringの無い環境で記事が重複してしまうバグを修正。日本語の修正。データベースを追加しましたので、1.1以下からアップグレードする場合は<u>モジュール管理で一度アンインストールしてから再度インストールを行って下さい</u>。</td>
+    </tr>
+    <tr>
+      <td>1.3</td>
+      <td>2005-01-26</td>
+      <td>nao-ponさんの本文表示ハックを導入しました。あいまい検索発動時に「すべて表示」が表示されなくなるバグを修正。「サイト検索[転送用]」ブロック追加。1.2以下からのアップグレードはテンプレートを変更していますので、<u>テンプレートを最新のものに入れ替えて下さい。モジュール管理で「アップデート」を実行して下さい。</u></td>
+    </tr>
+    <tr>
+      <td>1.4</td>
+      <td>2005-02-01</td>
+      <td>テンプレートのバグを修正。1.3以下からのアップデートお手数ですがは<a href="http://jp.xoops.org/modules/xhnewbb/viewtopic.php?viewmode=thread&order=DESC&topic_id=7168&forum=17" target="_blank">こちら</a>をご覧になって各自で修正を行って下さい。</td>
+    </tr>
+    <tr>
+      <td>1.5</td>
+      <td>2005-02-02</td>
+      <td>bluesさんから頂いたBluesBB用のプラグインを同封しました。セキュリティバグ修正。<u>1.4からのアップデートは、pluginフォルダを丸ごと上書きしてください。</u></td>
+    </tr>
+    <tr>
+      <td>1.6</td>
+      <td>2005-02-04</td>
+      <td>XSSを実行しうる脆弱を直しました。1.5以下からのアップグレードは、index.phpを必ず上書きしてください。</td>
+    </tr>
+    <tr>
+      <td>1.7</td>
+      <td>2005-02-12</td>
+      <td>aibaさんから頂いたXwords用のプラグインを同封しました。</td>
+    </tr>
+    <tr>
+      <td>1.8</td>
+      <td>2005-02-20</td>
+      <td>本文を表示するかどうか選択できるようにしました。1.6、1.7からのアップデートはinclude,
+      language, pluginディレクトリとindex.phpをそれぞれ上書きしてください。</td>
+    </tr>
+    <tr>
+      <td>1.9</td>
+      <td>2005-03-23</td>
+      <td>・[バグ修正]「次のページ &gt;&gt;」などのURLが&amp;amp;になるのを修正。<br>
+      1.8からのバージョンアップはindex.phpを上書きして下さい。</td>
+    </tr>
+  </tbody>
+</table>
+<h4>謝辞</h4>
+本文表示ハックをnao-ponさんからお借りしました。&lt;<a href="http://hypweb.net/xoops/">http://hypweb.net/xoops/</a>&gt;<br>
+dendekeさんの「検索対象とするモジュールを選択できる」ようにするというアイディアをお借りしました。<br>
+myblocksadminをGIJOEさんからお借りしました。&lt;<a href="http://www.peak.ne.jp/">http://www.peak.ne.jp/</a>&gt;<br>
+<br>
+●プラグインの制作者と入手先<br>
+- BluesBB　　bluesさん　&lt;<a href="http://www.bluish.jp/modules/mydownloads/singlefile.php?cid=5&lid=5" target="_blank">入手先</a>&gt;<br>
+- Xwords　　aibaさん　&lt;<a href="http://www.kanpyo.net/mydownloads+viewcat.cid+53.htm" target="_blank">入手先</a>&gt;<br>
+<br>
+<a href="http://www.suin.jp/">Amethyst Blue</a> by SUIN</div>
+</div>
+</body>
+</html>
